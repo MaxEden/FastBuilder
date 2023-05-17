@@ -1,13 +1,9 @@
 # FastBuilder 
-FastBuilder is a net 5 library that allows you to speed up build process for faster iterations 
-FastBuilder is based on idea of omitting full build process that includes neget packages check and references check.
-FastBuilder analises output of a common "dotnet build" command and retrieves full dependency graph and all roslyn command arguments.
-After the first dotnet build FastBuilder watches for source and dependencies changes.
-If only source files were changed or added, FastBuilder changes arguments and calls only final roslyn command omitting all the preparation steps.
+FastBuilder is a Net 5 library that allows you to speed up a build process for faster iterations. FastBuilder is based on the idea of omitting the full build process that includes checking nuget packages and references. FastBuilder parses the output of a common "dotnet build" command and retrieves the full dependency graph and all roslyn command arguments. After the initial dotnet build, FastBuilder watches for changes to the source and dependencies. If only source files have been changed or added, FastBuilder changes the arguments and calls only the final roslyn command, omitting all preparation steps.
 
-No dependencies allow it to integrate in any project with minimal impact, but FastBuilder relies on assumption that dotnet cli tools are installed and working correctly.
+There are no dependencies, so it can be integrated into any project with minimal impact. However, FastBuilder does assume that the dotnet cli tools are installed and working correctly.
 
-Rough measurements for hello world type of program where sources are changed by introducing new types
+Rough measurements for a hello world type of program where the sources are being changed by the introduction of new types
 
 regular dotnet build
 ```
